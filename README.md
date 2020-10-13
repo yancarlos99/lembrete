@@ -1,5 +1,14 @@
-# lembrete
+# Lembrete
 Aplicação de cadastro de lembrete.
+
+Principais tecnologias utilizadas no projeto
+
+- Java
+- Maven
+- JSF com Primefaces
+- Wildfly
+- Mysql
+- SOAP e REST
 
 
 
