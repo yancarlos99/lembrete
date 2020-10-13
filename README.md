@@ -1,5 +1,5 @@
 # Lembrete
-Aplicação de cadastro de lembrete.
+Um CRUD desenvolvido para um aplicação de cadastro de lembrete.
 
 Principais tecnologias utilizadas no projeto
 
