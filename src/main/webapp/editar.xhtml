@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <h:outputStylesheet name="css/editar.css" />
+
+    <title>Editar lembrete</title>
+
+    <f:metadata>
+        <f:viewParam name="lembrete" value="#{lembreteBean.lembrete.id}"/>
+        <f:event type="preRenderView" listener="#{lembreteBean.selecionar}"/>
+    </f:metadata>
+</h:head>
+<h:body>
+	<div class="header">
+		<h:link class="voltar" value="Voltar" outcome="home"/>
+	</div>
+	
+
+    <h:messages globalOnly="true"/>
+
+    <h:panelGroup rendered="#{lembreteBean.lembrete.id != 0}">
+       
+
+       <div class="form-section">
+    
+    <h:form>
+    <h1>Editar lembrete
+            "<h:outputText value="#{lembreteBean.lembrete.titulo}"/>"
+        </h1>
+
+        <p>Cadastrado em
+            <h:outputText value="#{lembreteBean.lembrete.criacao}">
+                <f:convertDateTime pattern="dd/MM/yyyy" timeZone="#{initParam.timezone}"/>
+            </h:outputText>
+            .
+        </p>
+    
+          <div class="p-field p-grid">
+		    	<p:outputLabel for="@next" value="Prioridade:"/>	
+		    	<div class="p-col">
+		        <p:selectOneMenu id="prioridade" value="#{lembreteBean.lembrete.prioridade}" required="true" dynamic="true" style="width:125px">
+                <f:selectItems value="#{lembreteBean.prioridades}"
+                               var="prioridade"
+                               itemValue="#{prioridade}"
+                               itemLabel="#{prioridade.descricao}"
+                />
+            </p:selectOneMenu>
+            <h:message for="prioridade"/>
+        </div>   
+      </div>
+    
+    <div class="p-field p-grid">
+    <p:outputLabel value="Início:" />
+    	<div class="p-col">
+        <p:calendar id="data-inicio" value="#{lembreteBean.lembrete.inicio}" pattern="dd-MM-yyyy" mask="true" timeZone="#{initParam.timezone}" />
+        </div>
+      </div>
+      <h:message for="data-inicio"/>
+      
+	    <div class="p-field p-grid">
+	        <p:outputLabel class="output" styleClass="p-col-fixed" style="width:100px" value="Título:" />
+	        <div class="p-col">
+	            <p:inputText id="titulo" value="#{lembreteBean.lembrete.titulo}" required="true">
+	            	<f:validateLength minimum="3" maximum="255"/>
+	            	<h:message for="titulo"/>
+	            </p:inputText>
+	        </div>
+	    </div>
+      
+	    <div class="p-field p-grid">
+	        <p:outputLabel class="output" styleClass="p-col-fixed" style="width:100px" value="Descrição:" />
+	        <div class="p-col">
+	            <p:inputTextarea rows="10" cols="50" id="descricao" value="#{lembreteBean.lembrete.descricao}" required="true">
+	            	<f:validateLength minimum="3" maximum="255"/>
+	            </p:inputTextarea>
+	            <h:message for="descricao"/>
+	        </div>
+	    </div>
+      
+       <div class="p-field p-grid">
+    	<div class="p-col">
+        <p:commandButton value="Enviar" action="#{lembreteBean.atualizar}" style="margin-right:20px;" styleClass="ui-priority-primary"/>
+        </div>
+      </div>
+      
+    </h:form>
+    </div>
+    
+    <ul class="squares">
+    <li></li>
+    </ul>
+
+<h:outputScript name="js/script.js" />
+        
+    </h:panelGroup>
+</h:body>
+</html>

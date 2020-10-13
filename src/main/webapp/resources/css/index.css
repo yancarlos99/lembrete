@@ -1,0 +1,35 @@
+body{
+	background-color: #2f3f4f;
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+.container {
+	margin-top: 5px;
+	padding: 15px;
+}
+
+.header{
+	height: 5px;
+	padding: 20px 40px;
+	display: flex;
+	background-color: #12191f;
+}
+
+.novo {
+	
+	height: 10px;
+	text-decoration: none;
+	color: #FFF;
+	display: flex;
+	font-family: sans-serif;
+}
+
+
+h1{
+	text-align:center;
+	font-weight: bold;
+	font-size: 24px;
+	color: #FFF;
+}

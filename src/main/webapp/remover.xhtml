@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+>
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <h:outputStylesheet name="css/remover.css" />
+    
+
+    <title>Remover lembrete</title>
+
+    <f:metadata>
+        <f:viewParam name="lembrete" value="#{lembreteBean.lembrete.id}"/>
+        <f:event type="preRenderView" listener="#{lembreteBean.selecionar}"/>
+    </f:metadata>
+</h:head>
+<h:body>
+
+	<div class="header">
+		<h:link class="novo" value="Voltar" outcome="home"/>
+	</div>
+	
+	<div class="container">
+
+    <h:messages globalOnly="true"/>
+	<h:form>
+	    <h:panelGroup rendered="#{lembreteBean.lembrete.id != 0}">
+	        <h1>Deseja remover este lembrete "
+	            <h:outputText value="#{lembreteBean.lembrete.titulo}"/>
+	            "?
+	        </h1>
+	
+	        <p>Cadastrado em
+	            <h:outputText value="#{lembreteBean.lembrete.criacao}">
+	                <f:convertDateTime pattern="dd/MM/yyyy" timeZone="#{initParam.timezone}"/>
+	            </h:outputText>
+	            .
+	        </p>
+	        
+	   <div class="p-field p-grid">
+			<div class="p-col">
+		    	<p:commandButton value="Confirmar" action="#{lembreteBean.excluir}" style="margin-right:20px;" styleClass="ui-priority-primary"/>
+		    </div>
+      </div>
+	    </h:panelGroup>
+    </h:form>
+    
+    </div>
+
+    
+</h:body>
+</html>
