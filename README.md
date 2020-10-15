@@ -1,5 +1,5 @@
 # Lembrete
-Um CRUD desenvolvido para um aplicação de cadastro de lembrete.
+Um CRUD desenvolvido para um aplicação de cadastros de lembretes.
 
 Principais tecnologias utilizadas no projeto
 
@@ -15,7 +15,7 @@ Principais tecnologias utilizadas no projeto
 - Nessa tela passando todas as informações necessarias, conseguimos adicionar um Lembrete com a sua determinada prioridade. 
 <img src=imagens_aplicacao/adicionar_lembrete.JPG />
 
-- Nessa outra tela conseguimos consultar toda a  listagem de todos os nosso lembretes cadastrados, e também conseguimos apagar e editar nossos lembretes. 
+- Nessa outra tela conseguimos consultar toda a  listagem de todos os nossos lembretes cadastrados, e também conseguimos apagar e editar nossos lembretes. 
 <img src=imagens_aplicacao/listagem_lembrete.JPG />
 
 - Nessa outra tela, seria a confirmação para apagar o lembrete.
